@@ -1,1 +1,1 @@
-py Hacky.py
+python Hacky.py
