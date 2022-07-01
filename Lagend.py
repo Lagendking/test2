@@ -1,11 +1,9 @@
 import colorama 
-from colorama import Fore, Back, Style
-from github import Github
+from colorama import Fore
 import os, shutil
 from pathlib import Path
 import sys
 import time
-import random
 colorama.init(autoreset=True)
 os.system("cls")
 
@@ -15,7 +13,7 @@ def delete_last_line():
     sys.stdout.write("\x1b[2K")
 
 def load(db, clr, clr2, clr3):
-    if not db:
+    if not db: #First run
         clr = Fore.GREEN
         clr2 = Fore.LIGHTGREEN_EX
         clr3 = Fore.LIGHTRED_EX
@@ -39,7 +37,7 @@ def pick(db):
     global clr2
     global clr3
 
-    if not db:
+    if not db: #First run
         clr = Fore.GREEN
         clr2 = Fore.LIGHTGREEN_EX
         clr3 = Fore.LIGHTRED_EX
@@ -68,7 +66,6 @@ def pick(db):
             schoice = input(f"{Fore.WHITE}[{Fore.LIGHTCYAN_EX}>>>{Fore.WHITE}]: ")
 
             if schoice in choices2:
-
                 if schoice == "1": #color settings
                     for x in range(0, 2 + len(choices2)):
                         delete_last_line()
@@ -83,8 +80,7 @@ def pick(db):
 
                     if cchoice in choices3:
                         if cchoice == "1": #Green
-                            for x in range(0, 25 + len(choices3)):
-                                delete_last_line()
+                            os.system("cls")
                             clr = Fore.GREEN
                             clr2 = Fore.LIGHTGREEN_EX
                             clr3 = Fore.LIGHTRED_EX
@@ -92,8 +88,7 @@ def pick(db):
                             pick(True)
 
                         elif cchoice == "2": #Red
-                            for x in range(0, 25 + len(choices3)):
-                                delete_last_line()
+                            os.system("cls")
                             clr = Fore.RED
                             clr2 = Fore.LIGHTRED_EX
                             clr3 = Fore.WHITE
@@ -101,8 +96,7 @@ def pick(db):
                             pick(True)
 
                         elif cchoice == "3": #Purple
-                            for x in range(0, 25 + len(choices3)):
-                                delete_last_line()
+                            os.system("cls")
                             clr = Fore.MAGENTA
                             clr2 = Fore.LIGHTMAGENTA_EX
                             clr3 = Fore.LIGHTCYAN_EX
@@ -110,8 +104,7 @@ def pick(db):
                             pick(True)
 
                         elif cchoice == "4": #Blue
-                            for x in range(0, 25 + len(choices3)):
-                                delete_last_line()
+                            os.system("cls")
                             clr = Fore.BLUE
                             clr2 = Fore.LIGHTBLUE_EX
                             clr3 = Fore.LIGHTCYAN_EX
@@ -119,8 +112,7 @@ def pick(db):
                             pick(True)
 
                         elif cchoice == "5": #Yellow
-                            for x in range(0, 25 + len(choices3)):
-                                delete_last_line()
+                            os.system("cls")
                             clr = Fore.YELLOW
                             clr2 = Fore.LIGHTYELLOW_EX
                             clr3 = Fore.LIGHTWHITE_EX
@@ -128,8 +120,7 @@ def pick(db):
                             pick(True)
 
                     else: #incorrect color choice
-                        for x in range(0, 25 + len(choices3)):
-                            delete_last_line()
+                        os.system("cls")
                         load(True, clr, clr2, clr3)
                         pick(True)
 
@@ -137,19 +128,25 @@ def pick(db):
                     for x in range(0, 2 + len(choices2)):
                         delete_last_line()
                     rc = input(f"{Fore.RED}Are you sure you want to remove hacky? (Y = yes | N = no) \n{Fore.WHITE}")
+
                     if rc == "y":
                         delete_last_line()
                         delete_last_line()
                         print(f"{Fore.RED}Removing {hacky}...")
-                        for path in Path(os.getcwd()).glob("**/*"):
+
+                        for path in Path(os.getcwd()).glob("**/*"): #Delete files and folders
                             if path.is_file():
                                 path.unlink()
                             elif path.is_dir():
                                 shutil.rmtree(path)
 
+                    else:
+                        os.system("cls")
+                        load(True, clr, clr2, clr3)
+                        pick(True)
+
             else: #incorrect setting choice
-                for x in range(0, 25 + len(choices2)):
-                    delete_last_line()
+                os.system("cls")
                 load(True, clr, clr2, clr3)
                 pick(True)
 
