@@ -1,4 +1,4 @@
-py -m pip install -r requirements.txt
+python -m pip install -r requirements.txt
 cls
 echo Hacky.py >> start.bat
 start start.bat
