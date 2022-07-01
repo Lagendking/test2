@@ -1,1 +1,1 @@
-python Lagend.py
+python Hacky.py
