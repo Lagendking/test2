@@ -20,12 +20,12 @@ def load(db, clr, clr2, clr3):
 
     print(f"""{clr}                                                                                                                                      
 
-                                {Fore.WHITE}██{clr}╗      {Fore.WHITE}█████{clr}╗  {Fore.WHITE}██████{clr}╗ {Fore.WHITE}███████{clr}╗{Fore.WHITE}███{clr}╗  {Fore.WHITE}██{clr}╗{Fore.WHITE}██████{clr}╗
-                                {Fore.WHITE}██{clr}║     {Fore.WHITE}██{clr}╔══{Fore.WHITE}██{clr}╗{Fore.WHITE}██{clr}╔════╝ {Fore.WHITE}██{clr}╔════╝{Fore.WHITE}████{clr}╗ {Fore.WHITE}██{clr}║{Fore.WHITE}██{clr}╔══{Fore.WHITE}██{clr}╗
-    (Created by Lagend)         {Fore.WHITE}██{clr}║     {Fore.WHITE}███████{clr}║{Fore.WHITE}██{clr}║   {Fore.WHITE}██{clr}╗{Fore.WHITE}█████{clr}╗  {Fore.WHITE}██{clr}╔{Fore.WHITE}██{clr}╗{Fore.WHITE}██{clr}║{Fore.WHITE}██{clr}║  {Fore.WHITE}██{clr}║
-                                {Fore.WHITE}██{clr}║     {Fore.WHITE}██{clr}╔══{Fore.WHITE}██{clr}║{Fore.WHITE}██{clr}║   {Fore.WHITE}██{clr}║{Fore.WHITE}██{clr}╔══╝  {Fore.WHITE}██{clr}║╚{Fore.WHITE}████{clr}║{Fore.WHITE}██{clr}║  {Fore.WHITE}██{clr}║
-                                {Fore.WHITE}███████{clr}╗{Fore.WHITE}██{clr}║  {Fore.WHITE}██{clr}║╚{Fore.WHITE}██████{clr}╔╝{Fore.WHITE}███████{clr}╗{Fore.WHITE}██{clr}║ ╚{Fore.WHITE}███{clr}║{Fore.WHITE}██████{clr}╔╝
-                                {clr}╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚══╝╚═════╝                                                                                                                                                                                      
+                                        ██╗  ██╗ █████╗  █████╗ ██╗  ██╗██╗   ██╗
+                                        ██║  ██║██╔══██╗██╔══██╗██║ ██╔╝╚██╗ ██╔╝
+    (Created by Lagend)                 ███████║███████║██║  ╚═╝█████═╝  ╚████╔╝
+                                        ██╔══██║██╔══██║██║  ██╗██╔═██╗   ╚██╔╝
+                                        ██║  ██║██║  ██║╚█████╔╝██║ ╚██╗   ██║
+                                        ╚═╝  ╚═╝╚═╝  ╚═╝ ╚════╝ ╚═╝  ╚═╝   ╚═╝""".replace("█", f"{Fore.WHITE}█{clr}") + f"""                                                                                                                                                                       
     {clr2}┏━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
     ┃   [{clr3}1{clr2}] = idk   ┃   [{clr3}3{clr2}] = idk   ┃   [{clr3}5{clr2}] = idk       ┃                                                           ┃
     ┃   [{clr3}2{clr2}] = idk   ┃   [{clr3}4{clr2}] = idk   ┃   [{clr3}6{clr2}] = Settings  ┃                                                           ┃
@@ -54,7 +54,7 @@ def pick(db):
         time.sleep(1)
         delete_last_line()
         pick(True)
-
+        
     else:
         if choice == "6": #settings
             for x in range(0, 5):
