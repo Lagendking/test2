@@ -1,9 +1,4 @@
-import colorama 
-from colorama import Fore
-import os, shutil
-from pathlib import Path
-import sys
-import time
+from util.idk import *
 colorama.init(autoreset=True)
 os.system("cls")
 
